@@ -2,34 +2,18 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Zhe Chen's Portfolio</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
-      <h1>Zhe Chen's Portfolio</h1>
-      <img src="/images/cz2.png" />
-      <img src="/images/umich.png" />
+      <h1>My Portfolio</h1>
       <p>This is my portfolio.</p>
-      <p>I'm an upcoming junior at the University of Michigan. My major is Computer Science and Data Science.</p>
-      <p>I come from Jiangsu, China. My favorite sport is playing table tennis.</p>
       <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random fact about me:</p>
-      <button onclick="addFact()">This is Zhe!</button>
-      <div id="fact-container"></div>
-      <form action="/form-handler" method="POST">
-        <p>Enter some text here:</p>
-        <textarea name="text-input">hello world</textarea>
-        <br/>
-        <input type="submit" />
-      </form>
-      <script src="script.js"></script>
-      <button onclick="showServerTime();">
-        Get date & time
-      </button>
-      <p id="date-container"></p>
-      <p>Click <a href="/date">here</a> to see the server response directly.</p>
+      <p>Click here to get a random message:</p>
+      <button onclick="addRandomGreeting()">Hello</button>
+      <div id="greeting-container"></div>
     </div>
   </body>
 </html>
