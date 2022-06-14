@@ -20,7 +20,7 @@ public class FormHandlerServlet extends HttpServlet {
     System.out.println("\n");
     // Write the value to the response so the user can see it.
     response.getWriter().println("You submitted: " + textValue);
-    response.getWriter().println("  \nBack to the main page: https://zchen-sps-summer22.appspot.com/");
+    response.setHeader("Refresh", "3;url=https://zchen-sps-summer22.appspot.com/");
     
   }
 }
