@@ -45,4 +45,12 @@ async function showServerTime() {
   
     const dateContainer = document.getElementById('date-container');
     dateContainer.innerText = textFromResponse;
-  }
+}
+
+async function getServerGreeting() {
+    
+    const responseFromServer = await fetch('/greeting');
+    const g = await responseFromServer.text();
+    const greetingsContainer = document.getElementById('greeting-container');
+    greetingsContainer.innerText = g;
+}
