@@ -48,9 +48,9 @@ async function showServerTime() {
 }
 
 async function getServerGreeting() {
-    
-    const responseFromServer = await fetch('/greeting');
-    const g = await responseFromServer.text();
+    const serverResponse = await fetch('/greeting');
+    const greet = await serverResponse.json();
+    const greeting = greet[Math.floor(Math.random()*greet.length)]; 
     const greetingsContainer = document.getElementById('greeting-container');
-    greetingsContainer.innerText = g;
+    greetingsContainer.innerText = greeting;
 }
