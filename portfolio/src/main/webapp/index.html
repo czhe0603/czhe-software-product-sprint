@@ -25,6 +25,16 @@
         <input type="submit" />
       </form>
       <script src="script.js"></script>
+  </body>
+  <body onload="loadMovies()">
+    <h1>Get Movie List</h1>
+    <form method="POST" action="/list-movies">
+      <button>Get the list</button>
+    </form>
+    <hr/>
+    <ul id="movie-list"></ul>
+  </body>
+  <body>
       <button onclick="showServerTime();">
         Get date & time
       </button>
