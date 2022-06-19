@@ -54,3 +54,14 @@ async function getServerGreeting() {
     const greetingsContainer = document.getElementById('greeting-container');
     greetingsContainer.innerText = greeting;
 }
+
+
+function loadMovies() {
+    fetch('/list-movies').then(response => response.json()).then((movies) => {
+      const movieListElement = document.getElementById('movie-list');
+      movies.forEach((movie) => {
+        movieListElement.appendChild(movie);
+      })
+    });
+  }
+  
