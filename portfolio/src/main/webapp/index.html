@@ -20,27 +20,22 @@
       <div id="fact-container"></div>
       <form action="/form-handler" method="POST">
         <p>Enter your favorite movie here:</p>
-        <textarea name="text-input">My favorite movie is </textarea>
+        <textarea name="text-input"></textarea>
         <br/>
         <input type="submit" />
       </form>
       <script src="script.js"></script>
-  </body>
-  <body onload="loadMovies()">
-    <h1>Get Movie List</h1>
-    <form method="POST" action="/list-movies">
-      <button>Get the list</button>
-    </form>
-    <hr/>
-    <ul id="movie-list"></ul>
-  </body>
-  <body>
+      <h1>Get Movie List</h1>
+      <button onclick="loadMovies()">Get the list!</button>
+      <ul id="movie-list"></ul>
+      <hr/>
+      <ul id="movie-list"></ul>
       <button onclick="showServerTime();">
         Get date & time
       </button>
       <p id="date-container"></p>
       <p>Click <a href="/date">here</a> to see the server response directly.</p>
-      <button onclick="getServerGreeting()">Fetch greetings!</button>
+      <button onclick="greetingList()">Fetch greetings!</button>
       <ul id="greeting-container"></ul>
     </div>
   </body>
