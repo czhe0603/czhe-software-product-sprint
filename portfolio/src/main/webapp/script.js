@@ -16,52 +16,50 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
-
-function addFact(){
-  const facts =
-        ['I have 2 siblings', 'I live in Shanghai', 'I\'m good at table tennis', 'I love cheesecakes!!!', 'Blue is my favorite color', 'My lucky number is 8'];
-
-  // Pick a random greeting.
-  const fact = facts[Math.floor(Math.random() * facts.length)];
-
-  // Add it to the page.
-  const factContainer = document.getElementById('fact-container');
-  factContainer.innerText = fact;
-}
-
-async function showServerTime() {
-    const responseFromServer = await fetch('/date');
-    const textFromResponse = await responseFromServer.text();
+    const greetings =
+        ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
   
-    const dateContainer = document.getElementById('date-container');
-    dateContainer.innerText = textFromResponse;
-}
-
-async function getServerGreeting() {
-    const serverResponse = await fetch('/greeting');
-    const greet = await serverResponse.json();
-    const greeting = greet[Math.floor(Math.random()*greet.length)]; 
-    const greetingsContainer = document.getElementById('greeting-container');
-    greetingsContainer.innerText = greeting;
-}
-
-
-function loadMovies() {
-    fetch('/list-movies').then(response => response.json()).then((movies) => {
-      const movieListElement = document.getElementById('movie-list');
-      movies.forEach((movie) => {
-        movieListElement.appendChild(movie);
-      })
-    });
+    // Pick a random greeting.
+    const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  
+    // Add it to the page.
+    const greetingContainer = document.getElementById('greeting-container');
+    greetingContainer.innerText = greeting;
   }
   
+  function addFact(){
+    const facts =
+          ['I have 2 siblings', 'I live in Shanghai', 'I\'m good at table tennis', 'I love cheesecakes!!!', 'Blue is my favorite color', 'My lucky number is 8'];
+  
+    // Pick a random greeting.
+    const fact = facts[Math.floor(Math.random() * facts.length)];
+  
+    // Add it to the page.
+    const factContainer = document.getElementById('fact-container');
+    factContainer.innerText = fact;
+  }
+  
+  async function showServerTime() {
+      const responseFromServer = await fetch('/date');
+      const textFromResponse = await responseFromServer.text();
+    
+      const dateContainer = document.getElementById('date-container');
+      dateContainer.innerText = textFromResponse;
+  }
+  
+  async function greetingList() {
+      const serverResponse = await fetch('/greeting');
+      const greet = await serverResponse.json();
+      const greeting = greet[Math.floor(Math.random()*greet.length)]; 
+      const greetingsContainer = document.getElementById('greeting-container');
+      greetingsContainer.innerText = greeting;
+  }
+  
+  
+  async function loadMovies() {
+      const serverResponse = await fetch('/list-movies');
+      const movie = await serverResponse.json();
+      const moviesContainer = document.getElementById('movie-list');
+      moviesContainer.innerText = movie;
+  }
+    
