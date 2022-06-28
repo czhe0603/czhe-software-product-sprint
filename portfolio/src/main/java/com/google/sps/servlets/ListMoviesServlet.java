@@ -16,12 +16,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet responsible for listing tasks. */
+/** Servlet responsible for listing movies. */
 @WebServlet("/list-movies")
 public class ListMoviesServlet extends HttpServlet {
 
   @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
         Query.newEntityQueryBuilder().setKind("Movie").build();
@@ -40,6 +40,5 @@ public class ListMoviesServlet extends HttpServlet {
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(movies));
     
-    response.setHeader("Refresh", "3;url=https://zchen-sps-summer22.appspot.com/");
   }
 }
