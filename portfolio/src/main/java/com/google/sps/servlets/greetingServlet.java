@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
+/** Servlet responsible for displaying greetings. */
 @WebServlet("/greeting")
 public class greetingServlet extends HttpServlet {
 
