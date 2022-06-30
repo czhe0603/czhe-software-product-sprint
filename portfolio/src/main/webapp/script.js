@@ -49,17 +49,17 @@ function addRandomGreeting() {
   
   async function greetingList() {
       const serverResponse = await fetch('/greeting');
-      const greet = await serverResponse.json();
-      const greeting = greet[Math.floor(Math.random()*greet.length)]; 
-      const greetingsContainer = document.getElementById('greeting-container');
-      greetingsContainer.innerText = greeting;
+      const greetings = await serverResponse.json();
+      const greeting = greetings[Math.floor(Math.random()*greetings.length)]; 
+      const greetingContainer = document.getElementById('greeting-container');
+      greetingContainer.innerText = greeting;
   }
   
   
   async function loadMovies() {
       const serverResponse = await fetch('/list-movies');
-      const movie = await serverResponse.json();
+      const movies = await serverResponse.json();
       const moviesContainer = document.getElementById('movie-list');
-      moviesContainer.innerText = movie;
+      moviesContainer.innerText = movies;
   }
     
