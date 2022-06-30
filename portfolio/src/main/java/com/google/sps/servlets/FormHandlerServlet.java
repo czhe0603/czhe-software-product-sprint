@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 
-
-
+/** Handles requests sent to the /form-handler URL. Run a server, naviate and then redirect! */
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
 
